@@ -4,4 +4,17 @@
 
 module.exports = function isIsogram(str) {
   // you code here
+  if(!str || str.length == 0){
+    return true
+  }
+  let letters = {}
+  const lowercasedStr = str.toLowerCase().split('');
+  for(var char of lowercasedStr){
+    if(letters[char]){
+      return false
+    } else {
+      letters[char] = true
+    }
+  }
+  return true
 };
